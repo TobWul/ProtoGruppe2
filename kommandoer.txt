@@ -3,3 +3,10 @@ sudo nano /etc/modprobe.d/snd-blacklist.conf
 blacklist snd_bcm2835
 sudo nano /boot/config.txt
 sudo reboot
+
+git clone https://github.com/jgarff/rpi_ws281x
+cd rpi_ws281x/
+sudo scons
+cd python
+sudo python setup.py build
+sudo python setup.py install
