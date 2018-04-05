@@ -1,3 +1,5 @@
+import ledRing
+
 class NoteDial:
     #               C   C#   D   D#  E   F   F#  G  G#  A   hB   H   C   C#   D   D#  E   F   F#  G  G#  A   hB  H
     noteFreqList = [131,139,147,156,165,175,185,196,208,220,233,247,262,277,294,311,330,349,370,392,415,440,466,494]
@@ -100,11 +102,6 @@ class NoteDial:
         # print("[prevPow, nextPow] = [%f, %f]\n" % (self.ledNextPower, self.ledPreviousPower))
 
         return [self.ledPreviousPower, self.ledNextPower]
-
-    def runLedRing(self, freq):
-        ledPower = self.calculateLedPower(freq)
-        print("Pos: %d, Pow: %f" % (self.notePos, ledPower[0]))
-        print("Pos: %d, Pow: %f" % (self.notePos + 1, ledPower[1]))
 
 
     
