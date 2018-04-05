@@ -1,3 +1,5 @@
+from __future__ import division
+
 class NoteDial:
     #               C   C#   D   D#  E   F   F#  G  G#  A   hB   H   C   C#   D   D#  E   F   F#  G  G#  A   hB  H
     noteFreqList = [131,139,147,156,165,175,185,196,208,220,233,247,262,277,294,311,330,349,370,392,415,440,466,494]
@@ -110,9 +112,11 @@ class NoteDial:
 # Testing
 noteDial = NoteDial()
 
-print(noteDial.calculateLedPower(330))
+print(noteDial.calculateLedPower(134))
+noe = [0.2, 0.4]
+print(noe)
 
-for i in range(131, 502):
-    print(i)
-    noteDial.runLedRing(i)
+##for i in range(131, 502):
+##    print(i)
+##    noteDial.runLedRing(i)
     

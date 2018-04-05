@@ -3,8 +3,6 @@ from NoteDial import NoteDial
 # Master dial
 class NoteDial1(NoteDial):
 
-    def __init__(self, rotaryOutputPinA, rotaryOutputPinB):
-        NoteDial.__init__(rotaryOutputPinA, rotaryOutputPinB)
 
     def validNotes(self):
         # All notes are valid

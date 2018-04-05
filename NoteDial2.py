@@ -3,8 +3,6 @@ from NoteDial import NoteDial
 # Second dial
 class NoteDial2(NoteDial):
 
-    def __init__(self, rotaryOutputPinA, rotaryOutputPinB):
-        NoteDial.__init__(rotaryOutputPinA, rotaryOutputPinB)
 
     def getOtherNotes(self, noteIndex):
         if (noteIndex == 0):
@@ -214,5 +212,5 @@ class NoteDial2(NoteDial):
             
 
 # Testing:
-n = NoteDial2(2,3)
-n.validNotes(131)
+# n = NoteDial2(2,3)
+# n.validNotes(131)

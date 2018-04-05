@@ -3,9 +3,6 @@ from NoteDial import NoteDial
 # Last dial
 class NoteDial3(NoteDial):
 
-    def __init__(self, rotaryOutputPinA, rotaryOutputPinB):
-        NoteDial.__init__(rotaryOutputPinA, rotaryOutputPinB)
-
     def getRemainingNote(self, index1, index2):
         # 0 + 1 = 1 | (2)
         # 0 + 2 = 2 | (1)
@@ -52,6 +49,6 @@ class NoteDial3(NoteDial):
         self.validIndexes = [self.noteToIndex(note3 + '3'), self.noteToIndex(note3 + '4')] # Returns the notes in the two octaves
 
 
-n = NoteDial3(2,3)
-n.validNotes(147,220)
-print('Note 3 indexes: ', n.validIndexes)
+# n = NoteDial3(2,3)
+# n.validNotes(147,220)
+# print('Note 3 indexes: ', n.validIndexes)
