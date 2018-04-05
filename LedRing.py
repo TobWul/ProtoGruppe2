@@ -22,25 +22,35 @@ class LedRing:
         self.LED_PIN = LedPin
         self.strip = Adafruit_NeoPixel(self.LED_COUNT, self.LED_PIN, self.LED_FREQ_HZ, self.LED_DMA, self.LED_INVERT, self.LED_BRIGHTNESS, self.LED_CHANNEL, self.LED_STRIP)
 
-    def lightSingleLED(self, pos, str):
-        str = int(str * 255)
-        self.strip.setPixelColor(pos, Color(str, str, str))
-        self.strip.show()
-
-    def lightLEDs(self, pos1, str1, pos2, str2):
-        # Turn off the old leds
-        self.lightSingleLED(self.prevPos1, 0)
-        self.lightSingleLED(self.prevPos2, 0)
+    def lightSingleLED(self, pos, color):
+        self.strip.setPixelColor(pos, color)
         self.strip.show()
         
+    def turnOffLED(self, pos):
+        self.strip.setPixelColor(pos, Color(0,0,0))
+    
+    def lightLEDs(self, pos1, str1, pos2, str2):
+        
+        # Turn off the old leds
+        self.turnOffLED(self.prevPos1)
+        self.turnOffLED(self.prevPos2)
+        
+        # Calculate light strength
+        str1 = int(str1 * 255)
+        str2 = int(str2 * 255)
+        
         # Light the two new leds
-        self.lightSingleLED(pos1, str1)
-        self.lightSingleLED(pos2, str2)
-        self.strip.show()
+        self.lightSingleLED(pos1, Color(str1, str1, str1))
+        self.lightSingleLED(pos2, Color(str2, str2, str2))
         
         self.prevPos1 = pos1
         self.prevPos2 = pos2
         
+    def lightChord(self, chords):
+        # Chord hint color
+        color = Color(255,255,0)
+        for i in chords:
+            self.lightSingleLED(i, color)
         
     
     def blackout(self, strip):

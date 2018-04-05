@@ -35,8 +35,10 @@ def loop():
     for freq in range(131,502):        
         noteDial1.ledPower = noteDial1.calculateLedPower(freq)
         print(noteDial1.notePos)
+        ledRing1.lightChord([3,5,8,10])
         ledRing1.lightLEDs(noteDial1.notePos, noteDial1.ledPreviousPower, noteDial1.notePos + 1, noteDial1.ledNextPower)
         time.sleep(0.001)
+        
 def clean():
     pass
 
